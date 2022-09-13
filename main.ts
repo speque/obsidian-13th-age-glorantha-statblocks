@@ -1,14 +1,11 @@
+import type { Enemy } from "types";
 import {
-	App,
 	MarkdownPostProcessorContext,
 	parseYaml,
-	Plugin,
-	PluginSettingTab,
-	Setting,
+	Plugin
 } from "obsidian";
 import { StatblockRenderer } from "statblockrenderer";
-
-const srdData = require("monsters.json");
+import srdData from "monsters.json";
 
 export default class ArchmagePlugin extends Plugin {
 	async onload() {
@@ -22,9 +19,9 @@ export default class ArchmagePlugin extends Plugin {
 		source: string,
 		el: HTMLElement,
 		ctx: MarkdownPostProcessorContext
-	): Promise<any> {
-		const yaml = parseYaml(source);
-		let renderData = { ...yaml };
+	): Promise<void> {
+		const yaml: Enemy = parseYaml(source);
+		let renderData: Enemy = { ...yaml };
 
 		if (yaml.monster) {
 			const lookupMonster = srdData.find((x) => x.name === yaml.monster);

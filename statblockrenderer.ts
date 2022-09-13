@@ -1,9 +1,10 @@
+import type { Enemy, Attack, Trait } from "types"
 import { MarkdownRenderChild } from "obsidian";
 
 export class StatblockRenderer extends MarkdownRenderChild {
 	statblockEl: HTMLDivElement;
 
-	constructor(containerEl: HTMLElement, private params: any) {
+	constructor(containerEl: HTMLElement, private params: Enemy) {
 		super(containerEl);
 
 		this.statblockEl = this.containerEl.createDiv({ cls: "statblock-13a" });
@@ -80,7 +81,7 @@ export class StatblockRenderer extends MarkdownRenderChild {
 		);
 	}
 
-	renderAttack(attack: any) {
+	renderAttack(attack: Attack) {
 		const attackEl = this.statblockEl.createDiv({ cls: "attack" });
 		if (attack.tag) {
 			attackEl.createSpan({ cls: "em", text: `[${attack.tag}] ` });
@@ -102,7 +103,7 @@ export class StatblockRenderer extends MarkdownRenderChild {
 		}
 	}
 
-	renderSimpleItem(trait: any) {
+	renderSimpleItem(trait: Trait) {
 		const traitEl = this.statblockEl.createDiv();
 		traitEl.createSpan({ cls: "em", text: `${trait.name}: ` });
 		traitEl.createSpan({ text: trait.description });
