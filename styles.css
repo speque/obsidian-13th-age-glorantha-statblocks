@@ -24,6 +24,12 @@
 	font-family: Luminari, Georgia, 'Times New Roman', Times, serif;
 }
 
+.statblock-13a span.rune {
+	font-family: "Glorantha Core Runes";
+	font-variant: initial;
+	font-size: 110%;
+}
+
 /* Easy styling for spans */
 .statblock-13a .bold {
 	font-weight: bold;

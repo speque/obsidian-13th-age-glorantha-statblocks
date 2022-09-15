@@ -1,6 +1,7 @@
 export type Trait = {
   name: string;
   description: string;
+	runes: Rune[];
 };
 
 export type Attack = {
@@ -13,6 +14,8 @@ export type Attack = {
 	extras: Trait[];
 };
 
+export type Rune = "chaos" | "truth"
+
 export type Enemy = {
   monster?: string;
 	source: string;
@@ -24,6 +27,7 @@ export type Enemy = {
 	attacks: Attack[];
 	traits: Trait[];
 	specials: Trait[];
+	freeFormAbilities: Trait[];
 	ac: number;
 	pd: number;
 	md: number;
@@ -31,4 +35,5 @@ export type Enemy = {
 	level: number;
 	size: string;
 	role: string;
+	runes: Rune[]
 }

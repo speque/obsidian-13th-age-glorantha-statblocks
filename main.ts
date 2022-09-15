@@ -10,7 +10,7 @@ import srdData from "monsters.json";
 export default class ArchmagePlugin extends Plugin {
 	async onload() {
 		this.registerMarkdownCodeBlockProcessor(
-			"13a",
+			"13aG",
 			this.processMarkdown.bind(this)
 		);
 	}

@@ -1,5 +1,10 @@
-import type { Enemy, Attack, Trait } from "types"
+import type { Enemy, Attack, Trait, Rune } from "types"
 import { MarkdownRenderChild } from "obsidian";
+
+const runesMap = new Map<Rune, string>([
+	["chaos", "?"],
+	["truth", "y"]
+]);
 
 export class StatblockRenderer extends MarkdownRenderChild {
 	statblockEl: HTMLDivElement;
@@ -10,10 +15,19 @@ export class StatblockRenderer extends MarkdownRenderChild {
 		this.statblockEl = this.containerEl.createDiv({ cls: "statblock-13a" });
 
 		this.statblockEl.createDiv({ cls: "fl-r em", text: params.source });
-		this.statblockEl.createEl("h1", { cls: "sc nomargin", text: params.name });
+		const title = this.statblockEl.createEl("h1", { cls: "sc nomargin", text: params.name });
+		if (params.runes) {
+			title.createSpan({ cls: "rune", text: ` ${convertRunes(params.runes)}`});
+		}
 
 		if (params.blurb) {
 			this.statblockEl.createDiv({ cls: "em", text: params.blurb });
+		}
+
+		if (params.freeFormAbilities?.length > 0) {
+			for (const ability of params.freeFormAbilities) {
+				this.renderSimpleItem(ability, 'Free-form ability');
+			}
 		}
 
 		if (this.roleText !== undefined) {
@@ -103,16 +117,25 @@ export class StatblockRenderer extends MarkdownRenderChild {
 		}
 	}
 
-	renderSimpleItem(trait: Trait) {
+	renderSimpleItem(trait: Trait, category?: string) {
 		const traitEl = this.statblockEl.createDiv();
-		traitEl.createSpan({ cls: "em", text: `${trait.name}: ` });
+		const prefix = category ? `${category} - ` : ''
+		traitEl.createSpan({ cls: "em", text: `${prefix}${trait.name}: ` });
 		traitEl.createSpan({ text: trait.description });
+		if (trait.runes) {
+			const runes = traitEl.createSpan({ cls: "rune", text: `${convertRunes(trait.runes)} `});
+			traitEl.prepend(runes);
+		}
 	}
 }
 
 function capitalize(str: string): string {
 	const lower = str.toLowerCase();
 	return lower[0].toUpperCase() + lower.slice(1);
+}
+
+function convertRunes(runes: Rune[]): string {
+	return runes.map(r => runesMap.get(r)).join("");
 }
 
 function bonus(stat: number | string): string {
