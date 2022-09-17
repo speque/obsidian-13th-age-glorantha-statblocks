@@ -1,0 +1,67 @@
+[
+  {
+    "name": "Doom Seeker Initiate",
+    "source": "13th Age Glorantha",
+    "blurb": "These initiates skulk in the shadows, figuratively or literally. Although relatively weak in toe-to-toe combat, they excel at stealth, thievery, and assassination. Each also carries a head that grants them one or more unpredictable powers. Initiates serve all three branches of the cult: Than, Atyar, and Thanatar.",
+    "level": 3,
+    "role": "troop",
+    "tag": "chaos humanoid",
+    "initiative": 5,
+    "runes": [
+      "chaos"
+    ],
+    "ac": 17,
+    "pd": 15,
+    "md": 17,
+    "hp": 40,
+    "attacks": [
+      {
+        "name": "Short, well-balanced sword +8 vs. AC",
+        "hit": "9 damage",
+        "extras": [
+          {
+            "name": "Natural 16+",
+            "description": "The target can’t make opportunity attacks until the end of the initiate’s turn."
+          }
+        ]
+      },
+      {
+        "name": "R: Thrown knife +8 vs. AC",
+        "hit": "6 damage",
+        "extras": [
+          {
+            "name": "Natural 16+",
+            "description": "The initiate can make another thrown knife attack as a move action this turn."
+          }
+        ]
+      }
+    ],
+    "traits": [
+      {
+        "name": "Stolen head",
+        "description": "A previously stolen head the initiate carries might provide any sort of benefit."
+      },
+      {
+        "name": "Free-form ability — Shadowy",
+        "description": "Doom seekers pass through society with little notice. They lurk or creep unseen in the shadows and readily lose pursuers if there’s any darkness to escape into, and witnesses have a hard time describing them in detail. In any kind of partial shadow, they can palm objects, pass secret messages, spy on others, and generally accomplish sneaky tasks. It’s hard (DC 20) to get the better of a doom seeker that is trying to be shadowy.",
+        "runes": [
+          "darkness"
+        ]
+      },
+      {
+        "name": "Free-form ability — Steal head",
+        "description": "Given half a chance, a seemingly unarmed initiate can quickly pull out a hidden garrote, loop it around the neck of an unsuspecting victim, and strangle them to death. With a little more work, the initiate can sever the head and pack it off to be ensorcelled by a priest. While next to a helpless or dead hero, an initiate can set up the garrote as a standard action, and then at the start of the initiate’s next turn, the initiate takes the head as a move action. Your players might never forgive you the first time you do it, but it’s probably worth it."
+      }
+    ],
+    "specials": [
+      {
+        "name": "Inevitable blood",
+        "description": "When an initiate misses with a short, well-balanced sword attack, the crit range for the melee attacks of each initiate in the battle increases by 1 for the rest of the battle (cumulative). Once an initiate scores a crit with a short, well-balanced sword attack, the crit range for all initiates resets to normal. The initiates’ blades seem to glitter with darkness."
+      },
+      {
+        "name": "Bigger, badder stolen head",
+        "description": "This one is worse Than you would expect."
+      }
+    ]
+  }
+]

@@ -1,7 +1,7 @@
-import type { Enemy, Attack, Trait, Rune } from "types"
+import type { Enemy, Attack, Trait } from "types"
 import { MarkdownRenderChild } from "obsidian";
 
-const runesMap = new Map<Rune, string>([
+const runesMap = new Map<string, string>([
 	["chaos", "?"],
 	["truth", "y"]
 ]);
@@ -134,7 +134,7 @@ function capitalize(str: string): string {
 	return lower[0].toUpperCase() + lower.slice(1);
 }
 
-function convertRunes(runes: Rune[]): string {
+function convertRunes(runes: string[]): string {
 	return runes.map(r => runesMap.get(r)).join("");
 }
 

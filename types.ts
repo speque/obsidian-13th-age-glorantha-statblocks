@@ -1,39 +1,41 @@
 export type Trait = {
   name: string;
   description: string;
-	runes: Rune[];
+	runes?: string[];
 };
 
 export type Attack = {
-	tag: string;
-	type: string;
+	tag?: string;
+	type?: string;
 	name: string;
-	attack: string;
-	detail: string;
+	attack?: string;
+	detail?: string;
 	hit: string;
-	extras: Trait[];
+	extras?: Trait[];
 };
 
-export type Rune = "chaos" | "truth"
-
 export type Enemy = {
-  monster?: string;
-	source: string;
+	source?: string;
 	name: string;
-	blurb: string;
+	blurb?: string;
 	tag: string;
 	initiative: number;
-	vuln: string;
+	vuln?: string;
 	attacks: Attack[];
 	traits: Trait[];
 	specials: Trait[];
-	freeFormAbilities: Trait[];
+	freeFormAbilities?: Trait[];
 	ac: number;
 	pd: number;
 	md: number;
 	hp: number;
 	level: number;
-	size: string;
+	size?: string;
 	role: string;
-	runes: Rune[]
+	runes?: string[]
+	monster?: string;
+}
+
+export type EnemyRef = {
+	monster: string;
 }

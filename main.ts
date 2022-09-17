@@ -6,6 +6,7 @@ import {
 } from "obsidian";
 import { StatblockRenderer } from "statblockrenderer";
 import srdData from "monsters.json";
+import gloranthaData from "gloranthanMonsters.json";
 
 export default class ArchmagePlugin extends Plugin {
 	async onload() {
@@ -20,13 +21,14 @@ export default class ArchmagePlugin extends Plugin {
 		el: HTMLElement,
 		ctx: MarkdownPostProcessorContext
 	): Promise<void> {
-		const yaml: Enemy = parseYaml(source);
-		let renderData: Enemy = { ...yaml };
+		const enemy: Enemy = parseYaml(source);
+		const allMonsters: Enemy[] = [...srdData, ...gloranthaData]
 
-		if (yaml.monster) {
-			const lookupMonster = srdData.find((x) => x.name === yaml.monster);
+		let renderData: Enemy = { ...enemy };
+		if ('monster' in enemy) {
+			const lookupMonster = allMonsters.find((x) => x.name === enemy.monster);
 			if (lookupMonster) {
-				renderData = { ...lookupMonster, ...yaml };
+				renderData = { ...lookupMonster, ...enemy } as Enemy;
 			}
 		}
 
