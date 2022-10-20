@@ -52,13 +52,19 @@
       },
       {
         "name": "Steal head",
-        "description": "Given half a chance, a seemingly unarmed initiate can quickly pull out a hidden garrote, loop it around the neck of an unsuspecting victim, and strangle them to death. With a little more work, the initiate can sever the head and pack it off to be ensorcelled by a priest. While next to a helpless or dead hero, an initiate can set up the garrote as a standard action, and then at the start of the initiate’s next turn, the initiate takes the head as a move action. Your players might never forgive you the first time you do it, but it’s probably worth it."
+        "description": "Given half a chance, a seemingly unarmed initiate can quickly pull out a hidden garrote, loop it around the neck of an unsuspecting victim, and strangle them to death. With a little more work, the initiate can sever the head and pack it off to be ensorcelled by a priest. While next to a helpless or dead hero, an initiate can set up the garrote as a standard action, and then at the start of the initiate’s next turn, the initiate takes the head as a move action. Your players might never forgive you the first time you do it, but it’s probably worth it.",
+        "runes": [
+          "death"
+        ]
       }
     ],
     "specials": [
       {
         "name": "Inevitable blood",
-        "description": "When an initiate misses with a short, well-balanced sword attack, the crit range for the melee attacks of each initiate in the battle increases by 1 for the rest of the battle (cumulative). Once an initiate scores a crit with a short, well-balanced sword attack, the crit range for all initiates resets to normal. The initiates’ blades seem to glitter with darkness."
+        "description": "When an initiate misses with a short, well-balanced sword attack, the crit range for the melee attacks of each initiate in the battle increases by 1 for the rest of the battle (cumulative). Once an initiate scores a crit with a short, well-balanced sword attack, the crit range for all initiates resets to normal. The initiates’ blades seem to glitter with darkness.",
+        "runes": [
+          "death"
+        ]
       },
       {
         "name": "Bigger, badder stolen head",
@@ -155,7 +161,35 @@
       {
         "name": "R: Lightning storm",
         "attack": "+8 vs. PD (up to 2 nearby or far away enemies)",
-        "hit": "12 lightning damage, and the renegade godi is dazed (–4 attack) and cannot cast lightning storm (two easy saves (6+ end both conditions)"
+        "hit": "12 lightning damage, and the renegade godi is dazed (–4 attack) and cannot cast lightning storm (two easy saves (6+) end both conditions)"
+      }
+    ]
+  },
+  {
+    "name": "Orlanthi Bandit Leader",
+    "source": "13th Age Glorantha",
+    "blurb": "With a couple hot meals and a night’s sleep, he could pass for a war leader.",
+    "level": 3,
+    "role": "leader",
+    "size": "",
+    "tag": "humanoid",
+    "initiative": 8,
+    "runes": ["air"],
+    "ac": 19,
+    "pd": 16,
+    "md": 16,
+    "hp": 46,
+    "attacks": [
+      {
+        "name": "Longsword",
+        "attack": "+8 vs. AC",
+        "hit": "10 damage, and until the end of the Orlanthi bandit leader’s next turn, its nearby allies gain a +3 bonus to disengage checks.",
+        "miss": "3 damage"
+      },
+      {
+        "name": "R: Bow",
+        "attack": "+6 vs. AC",
+        "hit": "8 damage"
       }
     ]
   }
