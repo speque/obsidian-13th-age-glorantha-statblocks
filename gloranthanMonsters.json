@@ -40,16 +40,18 @@
       {
         "name": "Stolen head",
         "description": "A previously stolen head the initiate carries might provide any sort of benefit."
-      },
+      }
+    ],
+    "freeFormAbilities": [
       {
-        "name": "Free-form ability — Shadowy",
+        "name": "Shadowy",
         "description": "Doom seekers pass through society with little notice. They lurk or creep unseen in the shadows and readily lose pursuers if there’s any darkness to escape into, and witnesses have a hard time describing them in detail. In any kind of partial shadow, they can palm objects, pass secret messages, spy on others, and generally accomplish sneaky tasks. It’s hard (DC 20) to get the better of a doom seeker that is trying to be shadowy.",
         "runes": [
           "darkness"
         ]
       },
       {
-        "name": "Free-form ability — Steal head",
+        "name": "Steal head",
         "description": "Given half a chance, a seemingly unarmed initiate can quickly pull out a hidden garrote, loop it around the neck of an unsuspecting victim, and strangle them to death. With a little more work, the initiate can sever the head and pack it off to be ensorcelled by a priest. While next to a helpless or dead hero, an initiate can set up the garrote as a standard action, and then at the start of the initiate’s next turn, the initiate takes the head as a move action. Your players might never forgive you the first time you do it, but it’s probably worth it."
       }
     ],
@@ -61,6 +63,99 @@
       {
         "name": "Bigger, badder stolen head",
         "description": "This one is worse Than you would expect."
+      }
+    ]
+  },
+  {
+    "name": "Outlawed Champion",
+    "source": "13th Age Glorantha",
+    "blurb": "Whoever she killed to get herself exiled, it’s a good bet that her clan misses them both.",
+    "level": 4,
+    "role": "wrecker",
+    "size": "",
+    "tag": "humanoid",
+    "initiative": 10,
+    "runes": ["air"],
+    "ac": 18,
+    "pd": 17,
+    "md": 15,
+    "hp": 56,
+    "attacks": [
+      {
+        "name": "Swift sword",
+        "attack": "+10 vs. AC (2 attacks)",
+        "hit": "5 damage and dazed (save ends) from the first attack; 10 damage from the second attack. (Opportunity attacks can use either the first or second attack.)"
+      }
+    ],
+    "traits": [
+      {
+        "name": "Hates failure",
+        "description": "That first time each battle that the outlawed champion misses with both attacks on the same turn, she gains an attack bonus equal to the escalation die until the end of the battle."
+      }
+    ]
+  },
+  {
+    "name": "Orlanthi Outlaw",
+    "source": "13th Age Glorantha",
+    "blurb": "If she hadn’t been outlawed, this warrior would have served her chieftain as a sword thane.",
+    "level": 2,
+    "role": "troop",
+    "size": "",
+    "tag": "humanoid",
+    "initiative": 7,
+    "runes": ["air"],
+    "ac": 17,
+    "pd": 16,
+    "md": 12,
+    "hp": 38,
+    "attacks": [
+      {
+        "name": "Spear",
+        "attack": "+7 vs. AC",
+        "hit": "7 damage",
+        "extras": [
+          {
+            "name": "Miss",
+            "description": "The next time the Orlanthi outlaw attacks this battle, it gains an attack bonus equal to the escalation die."
+          }
+        ]
+      },
+      {
+        "name": "R: Thrown javelin",
+        "attack": "+7 vs. AC",
+        "hit": "5 damage"
+      }
+    ]
+  },
+  {
+    "name": "Renegade Godi",
+    "source": "13th Age Glorantha",
+    "blurb": "Sometimes the line between breaking the law and carrying on in the tradition of Orlanth Adventurous gets hard to see. That’s his excuse, anyway.",
+    "level": 3,
+    "role": "caster",
+    "size": "",
+    "tag": "humanoid",
+    "initiative": 6,
+    "runes": ["air"],
+    "ac": 17,
+    "pd": 13,
+    "md": 19,
+    "hp": 50,
+    "attacks": [
+      {
+        "name": "Shortspear",
+        "attack": "+7 vs. AC",
+        "hit": "8 damage"
+      },
+      {
+        "name": "C: Punching winds",
+        "attack": "+8 vs. PD (1d4 nearby enemis)",
+        "hit": "6 damage, and the target pops free from each creature engaged with it"
+      },
+      {
+        "name": "R: Lightning storm",
+        "attack": "+8 vs. PD (up to 2 nearby or far away enemies)",
+        "hit": "12 lightning damage, and the renegade godi is dazed (–4 attack) and cannot cast lightning storm (two easy saves (6+ end both conditions)"
       }
     ]
   }
