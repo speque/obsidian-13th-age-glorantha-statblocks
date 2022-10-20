@@ -3,7 +3,11 @@ import { MarkdownRenderChild } from "obsidian";
 
 const runesMap = new Map<string, string>([
 	["chaos", "?"],
-	["truth", "y"]
+	["truth", "y"],
+	["darkness", "o"],
+	["undead", "u"],
+	["air", "g"],
+	["death", "t"]
 ]);
 
 export class StatblockRenderer extends MarkdownRenderChild {
