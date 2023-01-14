@@ -192,5 +192,43 @@
         "hit": "8 damage"
       }
     ]
+  },
+  {
+    "name": "Jack o’Bear",
+    "source": "13th Age Glorantha",
+    "blurb": "These monsters seem to be attracted to trouble. Adventurers encounter them loitering around ruins, Chaos nests, and sites of moral devastation.",
+    "level": 3,
+    "role": "spoiler",
+    "size": "large",
+    "tag": "chaos beast",
+    "initiative": 8,
+    "runes": ["chaos"],
+    "ac": 18,
+    "pd": 16,
+    "md": 17,
+    "hp": 100,
+    "attacks": [
+      {
+        "name": "Big ol’ bear claws",
+        "attack": "+8 vs. AC (engaged conscious enemy with the fewest hit points)",
+        "hit": "22 damage",
+        "miss": "11 damage"
+      },
+      {
+        "name": "C: Pumpkin head’s ensnaring gaze",
+        "attack": "+8 vs. MD (nearby enemy with the most hit points that the jack o’bear can see)",
+        "hit": "11 psychic damage, and the target is weakened (hard save ends, 16+). If the target is already weakened, it is instead stunned (save ends)."
+      }
+    ],
+    "traits": [
+      {
+        "name": "Hates failure",
+        "description": "Jack o’bears try to engage at least one enemy before they attack. You won’t know which attack they’re using, or even who they’re attacking, before they roll their attack die. A natural even roll means it uses pumpkin head’s ensnaring gaze. A natural odd attack means it uses big ol’ bear claws. If there isn’t a valid target for the attack rolled, the jack o’bear loses out."
+      },
+      {
+        "name": "Corner of the eye",
+        "description": "When a nearby enemy attacks the jack o’bear and rolls a natural 1–5, the jack o’bear can make a pumpkin head’s ensnaring gaze attack against the enemy as a free action."
+      }
+  ]
   }
 ]
