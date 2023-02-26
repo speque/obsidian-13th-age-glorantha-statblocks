@@ -1,5 +1,5 @@
 import type { Enemy, Attack, Trait } from "types"
-import { MarkdownRenderChild } from "obsidian";
+import {MarkdownRenderChild, MarkdownRenderer} from "obsidian";
 
 const runesMap = new Map<string, string>([
 	["chaos", "?"],
@@ -125,11 +125,13 @@ export class StatblockRenderer extends MarkdownRenderChild {
 		const traitEl = this.statblockEl.createDiv();
 		const prefix = category ? `${category} - ` : ''
 		traitEl.createSpan({ cls: "em", text: `${prefix}${trait.name}: ` });
-		traitEl.createSpan({ text: trait.description });
-		if (trait.runes) {
-			const runes = traitEl.createSpan({ cls: "rune", text: `${convertRunes(trait.runes)} `});
-			traitEl.prepend(runes);
-		}
+		const descEl = traitEl.createSpan();
+		MarkdownRenderer.renderMarkdown(trait.description, descEl, '', this).then(() => {
+			if (trait.runes) {
+				const runes = traitEl.createSpan({ cls: "rune", text: `${convertRunes(trait.runes)} `});
+				traitEl.prepend(runes);
+			}
+		});
 	}
 }
 
